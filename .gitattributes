@@ -1,0 +1,11 @@
+* text eol=lf
+*.jpg binary
+*.png binary
+*.zip binary
+*.tar.gz binary
+*.ps1 text eol=crlf
+*.pdf binary
+*.xlsx binary
+*.xls binary
+*.doc binary
+*.rpm binary

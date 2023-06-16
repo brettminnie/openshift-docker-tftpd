@@ -1,0 +1,12 @@
+---
+
+ignored:
+  - DL3006 # We do specify our tags as a variable, hadolint doesn't detect this
+  - DL3041 # We want the latest packages unless we have pinned them
+  - SC3009 # Bash is used on this container
+  - DL3002 # We need to run this container as root as we're access /proc
+  - SC3037 # We are using bash...
+  - DL4006
+failure-threshold: warning
+
+...

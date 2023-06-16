@@ -1,0 +1,121 @@
+file:
+  /config:
+    exists: true
+    mode: "0775"
+    size: 4096
+    owner: ftp
+    group: ftp
+    filetype: directory
+    contains: []
+  /config/grub2:
+    exists: true
+    mode: "0775"
+    size: 4096
+    owner: ftp
+    group: ftp
+    filetype: directory
+    contains: []
+  /config/grub2/grubx64.efi:
+    exists: true
+    mode: "0775"
+    owner: ftp
+    group: ftp
+    filetype: file
+    contains: []
+  /config/grub2/shimx64.efi:
+    exists: true
+    mode: "0775"
+    owner: ftp
+    group: ftp
+    filetype: file
+    contains: []
+  /config/ldlinux.c32:
+    exists: true
+    mode: "0775"
+    size: 116128
+    owner: ftp
+    group: ftp
+    filetype: file
+    contains: []
+  /config/libcom32.c32:
+    exists: true
+    mode: "0775"
+    size: 180668
+    owner: ftp
+    group: ftp
+    filetype: file
+    contains: []
+  /config/libutil.c32:
+    exists: true
+    mode: "0775"
+    size: 22804
+    owner: ftp
+    group: ftp
+    filetype: file
+    contains: []
+  /config/menu.c32:
+    exists: true
+    mode: "0775"
+    size: 26272
+    owner: ftp
+    group: ftp
+    filetype: file
+    contains: []
+  /config/pxelinux.0:
+    exists: true
+    mode: "0775"
+    owner: ftp
+    group: ftp
+    filetype: file
+    contains: []
+  /config/pxelinux.cfg:
+    exists: true
+    mode: "0775"
+    size: 4096
+    owner: ftp
+    group: ftp
+    filetype: directory
+    contains: []
+  /config/rhcos:
+    exists: true
+    mode: "0775"
+    size: 4096
+    owner: ftp
+    group: ftp
+    filetype: directory
+    contains: []
+  /config/vesamenu.c32:
+    exists: true
+    mode: "0775"
+    size: 26788
+    owner: ftp
+    group: ftp
+    filetype: file
+    contains: []
+package:
+  tftp-server:
+    installed: true
+    versions:
+    - "5.2"
+port:
+  udp:69:
+    listening: true
+user:
+  ftp:
+    exists: true
+    uid: 14
+    gid: 50
+    groups:
+    - ftp
+    home: /var/ftp
+    shell: /sbin/nologin
+command:
+  /usr/sbin/in.tftpd --version:
+    exit-status: 0
+    stdout:
+    - tftp-hpa 5.2, with remap, without tcpwrappers
+    stderr: []
+    timeout: 10000
+process:
+  in.tftpd:
+    running: true
