@@ -1,4 +1,4 @@
-ARG BUILD_IMAGE="registry.microlise.com/platform-base/almalinux:8-minimal"
+ARG BUILD_IMAGE="almalinux:8-minimal"
 FROM ${BUILD_IMAGE} as STAGING
 WORKDIR /tmp
 RUN microdnf install -y rpm dnf-utils cpio && \
